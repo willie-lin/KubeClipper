@@ -1,9 +1,8 @@
 package main
 
 import (
-	"KubeClipper/routers"
 	"fmt"
-
+	"github.com/willie-lin/KubeClipper/routers"
 )
 
 func main() {
@@ -14,5 +13,4 @@ func main() {
 
 	_ = router.Run()
 
-	
 }
