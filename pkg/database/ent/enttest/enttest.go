@@ -3,10 +3,11 @@
 package enttest
 
 import (
-	"KubeClipper/pkg/database/ent"
 	"context"
+
+	"github.com/willie-lin/KubeClipper/pkg/database/ent"
 	// required by schema hooks.
-	_ "KubeClipper/pkg/database/ent/runtime"
+	_ "github.com/willie-lin/KubeClipper/pkg/database/ent/runtime"
 
 	"github.com/facebook/ent/dialect/sql/schema"
 )

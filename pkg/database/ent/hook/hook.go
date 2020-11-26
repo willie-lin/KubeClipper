@@ -3,9 +3,10 @@
 package hook
 
 import (
-	"KubeClipper/pkg/database/ent"
 	"context"
 	"fmt"
+
+	"github.com/willie-lin/KubeClipper/pkg/database/ent"
 )
 
 // The UserFunc type is an adapter to allow the use of ordinary
