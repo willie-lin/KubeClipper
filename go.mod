@@ -16,6 +16,7 @@ require (
 	github.com/sirupsen/logrus v1.2.0
 	github.com/stretchr/testify v1.6.1
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
+	gopkg.in/yaml.v2 v2.2.8
 	k8s.io/apimachinery v0.19.0
 	k8s.io/client-go v0.19.0
 )

@@ -1,20 +1,27 @@
 package csconfig
 
+import (
+	"fmt"
+	"github.com/pkg/errors"
+	"gopkg.in/yaml.v2"
+)
+
 //
 type GlobalConfig struct {
 	Self     *string      `yaml:"-"`
 	DbConfig *DatabaseCfg `yaml:"db_config,omitempty"`
 }
 
-//func (c *GlobalConfig)  Dump() error {
-//
-//	out, err := yaml.Marshal(c)
-//	if err != nil {
-//		return errors.Wrap(err, "failed marshaling config")
-//		}
-//	fmt.Printf("%s", string(out))
-//	return nil
-//}
+func (c *GlobalConfig) Dump() error {
+
+	out, err := yaml.Marshal(c)
+	if err != nil {
+		return errors.Wrap(err, "failed marshaling config")
+	}
+	fmt.Printf("%s", string(out))
+	return nil
+}
+
 //
 //func (c *GlobalConfig) LoadConfigurationFile(path string) error  {
 //
@@ -51,6 +58,7 @@ func NewDefaultConfig() *GlobalConfig {
 	//logLevel  := log.InfoLevel
 
 	dbConfig := DatabaseCfg{
+		Type:     "mysql",
 		User:     "root",
 		Password: "root1234",
 		Host:     "127.0.0.1",
