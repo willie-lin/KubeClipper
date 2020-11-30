@@ -60,7 +60,7 @@ func NewDefaultConfig() *GlobalConfig {
 	dbConfig := DatabaseCfg{
 		Type:     "mysql",
 		User:     "root",
-		Password: "root1234",
+		Password: "root1234.",
 		Host:     "127.0.0.1",
 		Port:     3306,
 		DbName:   "KubeClipper",

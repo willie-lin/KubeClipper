@@ -33,13 +33,14 @@ func NewClient(config *csconfig.DatabaseCfg) (*Client, error) {
 			return &Client{}, fmt.Errorf("faild opening connection to sqlite: %v", err)
 		}
 	case "mysql":
+		fmt.Printf("%s", config.User)
 		client, err = ent.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?parseTime=True", config.User, config.Password,
 			config.Host, config.Port, config.DbName))
 		if err != nil {
 			return &Client{}, fmt.Errorf("failed opening connection to mysql: %v", err)
 		}
 	case "postgres", "postgresql":
-		client, err = ent.Open("postgres", fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s",
+		client, err = ent.Open("postgres", fmt.Sprintf("host=%s port=%d user=%s dbname=%s password=%s",
 			config.Host, config.Port, config.User, config.DbName, config.Password))
 		if err != nil {
 			return &Client{}, fmt.Errorf("failed opening connection postgres: %v", err)
